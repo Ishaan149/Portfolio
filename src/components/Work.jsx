@@ -1,141 +1,60 @@
-import React from 'react'
-import proj1 from '../assets/proj1.png'
-import proj2 from '../assets/proj2.png'
-import proj3 from '../assets/proj3.png'
-import proj4 from '../assets/proj4.png'
-import proj5 from '../assets/proj5.png'
-import proj6 from '../assets/proj6.png'
+import React from 'react';
+import proj1 from '../assets/Proj1.jpeg';
+import proj2 from '../assets/Proj2.jpeg';
+import proj3 from '../assets/Proj3.jpeg';
+import proj4 from '../assets/Proj4.jpeg';
+
+const projects = [
+    {
+        image: proj1,
+        title: "MovieNest",
+        description: "MovieNest is a full-stack movie review platform designed for seamless user engagement. Built with HTML, CSS, JavaScript, Node.js, and MongoDB, it features a responsive interface that enhances user experience across devices. The platform efficiently manages and retrieves reviews, achieving sub-2-second load times for search and review functions. With over 200 user reviews in its initial phase, MovieNest demonstrates expertise in backend logic, database management, and performance optimization.",
+        github: "https://github.com/Ishaan149/Movie-Review"
+    },
+    {
+        image: proj2,
+        title: "Stock Price Prediction Model",
+        description: "This machine learning-driven model predicts Apple's stock price movements with a 90% AUC-ROC score. Built using Python, Pandas, Scikit-Learn, and XGBoost, it employs data cleaning and normalization techniques to enhance predictive accuracy. The model leverages logistic regression, support vector machines, and other ML algorithms, with Matplotlib visualizations providing insights into stock trends and volatility for improved decision-making.",
+        github: "https://github.com/Ishaan149/Apple_stock"
+    },
+    {
+        image: proj3,
+        title: "Habit Tracker iOS App",
+        description: "A full-stack iOS application designed to help users efficiently build, manage, and track their habits. Developed using Swift, SwiftUI, and UIKit, it features dynamic calendar components, push notifications for reminders, and an intuitive interface. The app achieved 95% positive user feedback and increased daily habit completion rates by 20% through seamless user interactions and refined UX design.",
+        github: "https://github.com/Ishaan149/Atomic"
+    },    
+    {
+        image: proj4,
+        title: "Color Sort Game",
+        description: "An interactive web-based game designed to enhance cognitive skills through engaging color-sorting challenges. Built with React.js, JavaScript, and CSS, it features dynamic game logic, real-time feedback on moves, and a scoring system to encourage re-playability. The game improves user engagement by 30% through smooth color transfers, validation checks, and an intuitive interface.",
+        github: "https://github.com/Ishaan149/color-sort"
+    }    
+];
 
 const Work = () => {
-  return (
-    <div className='max-w-[1200px] mx-auto p-5' id='work'>
-        <div className='pb-8'>
-            <p className='text-4xl mb-3 font-bold primary-color'>Work</p>
-            <p className='text-gray-400'>Check out some of my recent work</p>
+    return (
+        <div className='max-w-[1200px] mx-auto p-5' id='work'>
+            <div className='pb-8'>
+                <p className='text-4xl mb-3 font-bold primary-color'>Projects</p>
+                <p className='text-gray-400'>Check out some of my recent projects</p>
+            </div>
+
+            <div className='grid gap-8'>
+                {projects.map((project, index) => (
+                    <div key={index} className='flex flex-col md:flex-row items-center bg-[#161616] shadow-lg p-5 rounded-lg'>
+                        <img src={project.image} alt={project.title} className='w-full md:w-1/3 rounded-lg'/>
+                        <div className='md:ml-6 mt-4 md:mt-0 text-center md:text-left'>
+                            <h3 className='text-2xl font-bold text-white'>{project.title}</h3>
+                            <p className='text-gray-300 mt-2'>{project.description}</p>
+                            <a href={project.github} target='_blank' rel='noopener noreferrer'>
+                                <button className='mt-4 bg-white text-gray-800 px-4 py-2 rounded-lg font-bold'>View on GitHub</button>
+                            </a>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
+    );
+};
 
-        <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-4'>
-{/* copy paste for projects */}
-            <div className='transform transition-transform duration-300 hover:scale-105 overflow-hidden
-                            shadow-lg shadow-[#040c16] group container rounded-md flex justify-center 
-                            items-center mx-auto content-div h-[200px] bg-cover relative'>
-                                
-                <img src={proj1} layout="fill" objectFit="cover" alt=""/>
-                <div className='opacity-0 group-hover:opacity-90 bg-[gray]/70 absolute inset-0 flex flex-col 
-                                justify-center items-center'>
-                    <span className='text-2xl font-bold text-white tracking-wider'></span>
-                    <div className='pt-8 text-center'>
-                        <a href='/'>
-                            <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700
-                                                font-bold text-lg'>
-                                Live   
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div className='transform transition-transform duration-300 hover:scale-105 overflow-hidden
-                            shadow-lg shadow-[#040c16] group container rounded-md flex justify-center 
-                            items-center mx-auto content-div h-[200px] bg-cover relative'>
-                                
-                <img src={proj2} layout="fill" objectFit="cover" alt=""/>
-                <div className='opacity-0 group-hover:opacity-90 bg-[gray]/70 absolute inset-0 flex flex-col 
-                                justify-center items-center'>
-                    <span className='text-2xl font-bold text-white tracking-wider'></span>
-                    <div className='pt-8 text-center'>
-                        <a href='/'>
-                            <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700
-                                                font-bold text-lg'>
-                                Live   
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div className='transform transition-transform duration-300 hover:scale-105 overflow-hidden
-                            shadow-lg shadow-[#040c16] group container rounded-md flex justify-center 
-                            items-center mx-auto content-div h-[200px] bg-cover relative'>
-                                
-                <img src={proj3} layout="fill" objectFit="cover" alt=""/>
-                <div className='opacity-0 group-hover:opacity-90 bg-[gray]/70 absolute inset-0 flex flex-col 
-                                justify-center items-center'>
-                    <span className='text-2xl font-bold text-white tracking-wider'></span>
-                    <div className='pt-8 text-center'>
-                        <a href='/'>
-                            <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700
-                                                font-bold text-lg'>
-                                Live   
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div className='transform transition-transform duration-300 hover:scale-105 overflow-hidden
-                            shadow-lg shadow-[#040c16] group container rounded-md flex justify-center 
-                            items-center mx-auto content-div h-[200px] bg-cover relative'>
-                                
-                <img src={proj4} layout="fill" objectFit="cover" alt=""/>
-                <div className='opacity-0 group-hover:opacity-90 bg-[gray]/70 absolute inset-0 flex flex-col 
-                                justify-center items-center'>
-                    <span className='text-2xl font-bold text-white tracking-wider'></span>
-                    <div className='pt-8 text-center'>
-                        <a href='/'>
-                            <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700
-                                                font-bold text-lg'>
-                                Live   
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div className='transform transition-transform duration-300 hover:scale-105 overflow-hidden
-                            shadow-lg shadow-[#040c16] group container rounded-md flex justify-center 
-                            items-center mx-auto content-div h-[200px] bg-cover relative'>
-                                
-                <img src={proj5} layout="fill" objectFit="cover" alt=""/>
-                <div className='opacity-0 group-hover:opacity-90 bg-[gray]/70 absolute inset-0 flex flex-col 
-                                justify-center items-center'>
-                    <span className='text-2xl font-bold text-white tracking-wider'></span>
-                    <div className='pt-8 text-center'>
-                        <a href='/'>
-                            <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700
-                                                font-bold text-lg'>
-                                Live   
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div className='transform transition-transform duration-300 hover:scale-105 overflow-hidden
-                            shadow-lg shadow-[#040c16] group container rounded-md flex justify-center 
-                            items-center mx-auto content-div h-[200px] bg-cover relative'>
-                                
-                <img src={proj6} layout="fill" objectFit="cover" alt=""/>
-                <div className='opacity-0 group-hover:opacity-90 bg-[gray]/70 absolute inset-0 flex flex-col 
-                                justify-center items-center'>
-                    <span className='text-2xl font-bold text-white tracking-wider'></span>
-                    <div className='pt-8 text-center'>
-                        <a href='/'>
-                            <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700
-                                                font-bold text-lg'>
-                                Live   
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-  )
-}
-
-export default Work
+export default Work;
